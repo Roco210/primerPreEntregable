@@ -24,7 +24,7 @@ export class CartManager {
             const id = cart.length == 0 ? 1 : cart[cart.length - 1].id + 1
             cart.push({ id: id, products: [] })
             await fs.promises.writeFile(this.path, JSON.stringify(cart), 'utf-8')
-            return `se creo el carrito con ID: ${id}`
+            return `The cart was created with ID: ${id}`
         }
         catch { (error) => { return error } }
 
